@@ -10,6 +10,8 @@ if __name__ == '__main__':
     # os.system("allure generate ./temps -o ./reports --clean")
 
 
+
+
     # 单元测试
     # head = "Cookie': 'TSID='+${Cookie}"
     # if "${" in head and "}" in head:
