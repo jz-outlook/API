@@ -1,4 +1,3 @@
-
 # 调用多个方法
 import random
 import time
@@ -15,5 +14,3 @@ class Test:
 
 if __name__ == '__main__':
     print(Test().get_random_time())
-
-
