@@ -1,9 +1,0 @@
--
-  name: 访问app应用
-  request:
-    method: get
-    url: /?${get_random_time()}
-    headers:
-      Cookie: TSID=${read_extract_data(Cookie)}
-    data:
-  validate:

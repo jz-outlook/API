@@ -10,8 +10,6 @@
       username: admin
   extract:
     Cookie: '"accessToken":"(.*?)"'
-    enterpriseId: '"enterpriseId":"(.+?)"'
-    code: $.code
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}

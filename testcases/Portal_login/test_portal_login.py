@@ -14,12 +14,3 @@ class TestPortalApi:
     def test_get_token(self, caseinfo):
         RequestsUtil('base_portal_url', DebugTalk()).standard_yaml(caseinfo)
 
-    # @pytest.mark.skip
-    # @pytest.mark.parametrize('caseinfo', read_case_yaml('./testcases/Portal_login/test_get_app.yaml'))
-    # def test_get_app(self, caseinfo):
-    #     RequestsUtil('base_app_url', DebugTalk()).standard_yaml(caseinfo)
-
-    # @pytest.mark.skip(reason='不执行上传接口')
-    # @pytest.mark.parametrize('caseinfo', read_case_yaml('./testcases/Portal_login/test_file_cert.yaml'))
-    # def test_file_cert(self, caseinfo):
-    #     RequestsUtil('base_console_url', DebugTalk()).standard_yaml(caseinfo)
