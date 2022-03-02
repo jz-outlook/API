@@ -5,7 +5,7 @@
     url: /api/endUser/login
     data:
       code: 0466db653924fe0fc99e871260e9ddd0
-      deviceId: 9ADC54011954A05D29F00AB68C4AD07A
+      deviceId: 722E9C6189D99A73992525879F753A59
       password: SHkxMjMhISE=
       username: admin
   extract:
