@@ -8,5 +8,9 @@ class TestDepartment:
 
 
     @pytest.mark.parametrize('caseinfo', read_case_yaml('./testcases/department_manage/get_department.yaml'))
-    def test_get_token(self, caseinfo):
+    def test_get_department(self, caseinfo):
+        RequestsUtil('base_api_url', DebugTalk()).standard_yaml(caseinfo)
+
+    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testcases/department_manage/save_department.yaml'))
+    def test_save_department(self, caseinfo):
         RequestsUtil('base_api_url', DebugTalk()).standard_yaml(caseinfo)

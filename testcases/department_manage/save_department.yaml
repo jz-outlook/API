@@ -1,0 +1,17 @@
+-
+  name: 新增部门
+  request:
+    method: post
+    url: /user/department/save
+    data:
+      id:
+      name: 销售部
+      parentId: ${read_extract_data(id)}
+    headers:
+      Cookie: TSID=${read_extract_data(Cookie)}
+      accessToken: ${read_extract_data(accessToken)}
+  extract:
+    +id: '"id":"(.*?)"'
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}
