@@ -1,0 +1,6 @@
+# 基础路径配置
+base:
+  base_portal_url: https://admin.test.tiger-sec.cn:443
+  base_console_url: https://admin.test.tiger-sec.cn:9000
+  base_app_url: http://pc.test.tiger-sec.cn?
+  base_api_url: http://3399.test.tiger-sec.cn:80

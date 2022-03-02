@@ -1,0 +1,18 @@
+-
+  name: 登录portal获取tsin
+  request:
+    method: post
+    url: /api/endUser/login
+    data:
+      code: 0466db653924fe0fc99e871260e9ddd0
+      deviceId: 9ADC54011954A05D29F00AB68C4AD07A
+      password: SHkxMjMhISE=
+      username: admin
+  extract:
+    Cookie: '"accessToken":"(.*?)"'
+    enterpriseId: '"enterpriseId":"(.+?)"'
+    code: $.code
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}
+    - contains: accessToken
