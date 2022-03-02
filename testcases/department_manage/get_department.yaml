@@ -7,6 +7,8 @@
     headers:
       Cookie: TSID=${read_extract_data(Cookie)}
       accessToken: ${read_extract_data(accessToken)}
+  extract:
+    id: '"id":"(.*?)"'
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}
