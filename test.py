@@ -14,3 +14,6 @@ class Test:
 
 if __name__ == '__main__':
     print(Test().get_random_time())
+
+
+# MD5分支查看
