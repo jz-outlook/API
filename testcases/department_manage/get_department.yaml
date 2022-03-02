@@ -1,0 +1,12 @@
+-
+  name: 获取部门
+  request:
+    method: get
+    url: /user/department/list
+    data:
+    headers:
+      Cookie: TSID=${read_extract_data(Cookie)}
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

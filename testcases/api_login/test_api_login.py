@@ -24,5 +24,5 @@ class TestApiLogin:
             'Cookie': "TSID="+read_extract_yaml('Cookie')
         }
         req = RequestsUtil('base_api_url', DebugTalk()).send_request('post', url=url, headers=headers, data=data)
-        token = RequestsUtil('base_portal_url', DebugTalk()).get_text(req.text, 'accessToken')
+        token = RequestsUtil('base_api_url', DebugTalk()).get_text(req.text, 'accessToken')
         write_extract_yaml({'accessToken': token})

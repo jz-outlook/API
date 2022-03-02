@@ -39,11 +39,11 @@ class RequestsUtil:
                         new_value = getattr(DebugTalk(), func_name)()
                     # replace函数替换
                     if isinstance(new_value, int) or isinstance(new_value, float):
-                        print(1)
+                        print("第一种替换方式")
                         str_data = str_data.replace('"'+old_value+'"', str(new_value))
                     else:
                         str_data = str_data.replace(old_value, str(new_value))
-                        print(2)
+                        print("第二种替换方式")
                     print('替换后的字段' + str_data)
 
             # 还原数据类型
