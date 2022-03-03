@@ -9,11 +9,14 @@ from common.yaml_util import read_data_yaml, get_object_path
 def read_case_yaml(yaml_path):
     with open(get_object_path() + yaml_path, mode='r', encoding='utf-8') as f:  # mode默认read
         caseinfo = yaml.load(f, Loader=yaml.FullLoader)
-        if 'parameterize' in dict(*caseinfo).keys():
-            new_caseinfo = ddt(*caseinfo)
-            return new_caseinfo
-        else:
+        if len(caseinfo)>=2:
             return caseinfo
+        else:
+            if 'parameterize' in dict(*caseinfo).keys():
+                new_caseinfo = ddt(*caseinfo)
+                return new_caseinfo
+            else:
+                return caseinfo
 
 
 def ddt(caseinfo):
