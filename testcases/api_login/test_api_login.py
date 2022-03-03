@@ -1,9 +1,9 @@
 import time
 import pytest
-import requests
 from common.Md5 import MD5
+from common.parameterize_util import read_case_yaml
 from common.requests_util import RequestsUtil
-from common.yaml_util import read_extract_yaml, get_object_path, read_case_yaml, write_extract_yaml
+from common.yaml_util import write_extract_yaml
 from debug_talk import DebugTalk
 
 

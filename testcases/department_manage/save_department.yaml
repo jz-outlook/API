@@ -1,12 +1,14 @@
 -
-  name: 新增部门
+  name: $ddt{name}
+  parameterize:
+    name-parentId-contains: /data/save_department_manage/save_department_data.yaml
   request:
     method: post
     url: /user/department/save
     data:
       id:
-      name: 销售部
-      parentId: ${read_extract_data(id)}
+      name: 销售部门
+      parentId: $ddt{parentId}
     headers:
       accessToken: ${read_extract_data(accessToken)}
   extract:
@@ -14,3 +16,4 @@
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}
+    - contains: $ddt{contains}

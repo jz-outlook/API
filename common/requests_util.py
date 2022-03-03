@@ -173,7 +173,7 @@ class RequestsUtil:
     # 包含断言
     def contains_assert(self, value, sj_result):
         flag = 0
-        if value not in str(sj_result):
+        if str(value) not in str(sj_result):
             flag = flag + 1
-            print("断言失败：返回的结果中不包含" + value)
+            print("断言失败：返回的结果中不包含" + str(value))
         return flag
