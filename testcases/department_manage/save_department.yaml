@@ -8,7 +8,6 @@
       name: 销售部
       parentId: ${read_extract_data(id)}
     headers:
-      Cookie: TSID=${read_extract_data(Cookie)}
       accessToken: ${read_extract_data(accessToken)}
   extract:
     +id: '"id":"(.*?)"'

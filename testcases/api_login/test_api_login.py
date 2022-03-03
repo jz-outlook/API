@@ -20,9 +20,6 @@ class TestApiLogin:
         data['clientId'] + data['ClientSecret'] + str(time_str)
         sign = MD5(data['clientId'] + data['ClientSecret'] + str(time_str))
         data['sign'] = sign
-        headers = {
-            'Cookie': "TSID="+read_extract_yaml('Cookie')
-        }
-        req = RequestsUtil('base_api_url', DebugTalk()).send_request('post', url=url, headers=headers, data=data)
+        req = RequestsUtil('base_api_url', DebugTalk()).send_request('post', url=url, data=data)
         token = RequestsUtil('base_api_url', DebugTalk()).get_text(req.text, 'accessToken')
         write_extract_yaml({'accessToken': token})
