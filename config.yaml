@@ -1,4 +1,9 @@
 # 基础路径配置
 base:
-  base_api_url: http://192.168.2.129:8088
-#  base_api_url: http://364y369t39.qicp.vip:49125
+#  base_api_url: http://192.168.2.129:8088
+  base_api_url: http://364y369t39.qicp.vip:21371
+# 日志配置
+log:
+  log_name: logs_
+  log_level: info
+  log_format: '[%(asctime)s] %(filename)s->%(funcName)s line:%(lineno)d [%(levelname)s] %(message)s'

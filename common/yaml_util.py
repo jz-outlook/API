@@ -4,8 +4,10 @@ import yaml
 
 # 获取项目跟目录
 def get_object_path():
-    os.getcwd()
-    return os.getcwd()
+    # os.getcwd()
+    # os.path.abspath(os.getcwd().split("commons")[0])
+    return os.path.abspath(os.getcwd().split("common")[0])
+
 
 
 # 读取extract.yaml
