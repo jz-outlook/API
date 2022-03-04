@@ -4,6 +4,7 @@ import jsonpath
 import requests
 from common.yaml_util import read_config_yaml, write_extract_yaml, read_extract_yaml, get_object_path
 from debug_talk import DebugTalk
+from test import Test
 
 
 class RequestsUtil:
@@ -40,7 +41,7 @@ class RequestsUtil:
                     # replace函数替换
                     if isinstance(new_value, int) or isinstance(new_value, float):
                         print("第一种替换方式")
-                        str_data = str_data.replace('"'+old_value+'"', str(new_value))
+                        str_data = str_data.replace('"' + old_value + '"', str(new_value))
                     else:
                         str_data = str_data.replace(old_value, str(new_value))
                         print("第二种替换方式")

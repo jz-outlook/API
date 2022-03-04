@@ -1,4 +1,3 @@
 # DDT(data driver test)数据驱动YAML文件，对应的yaml测试用例文件为：save_department.yaml
 - ['name','parentId','contains']
-- ['成功新增部门','${read_extract_data(id)}',200]
-- ['状态码为300','${read_extract_data(id)}',成功]
+- ['成功新增部门','${read_extract_data(firm_id)}',200]

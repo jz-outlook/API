@@ -1,12 +1,13 @@
 -
-  name: 查询部门
+  name: 获取部门列表
   request:
     method: get
-    url: /user/department/get/${read_extract_data(parentId)}
+    url: /user/department/list
     data:
-      id: ${read_extract_data(parentId)}
     headers:
       accessToken: ${read_extract_data(accessToken)}
+  extract:
+    firm_id: '"id":"(.*?)"'
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}

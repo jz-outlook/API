@@ -1,8 +1,8 @@
 -
-  name: 查询部门
+  name: 删除部门
   request:
-    method: get
-    url: /user/department/get/${read_extract_data(parentId)}
+    method: delete
+    url: /user/department/delete/${read_extract_data(parentId)}
     data:
       id: ${read_extract_data(parentId)}
     headers:

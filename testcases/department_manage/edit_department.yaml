@@ -1,0 +1,14 @@
+-
+  name: 修改部门名称
+  request:
+    method: post
+    url: /user/department/save
+    data:
+      id: ${read_extract_data(parentId)}
+      name: 修改部门名称
+      parentId: ${read_extract_data(firm_id)}
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}
