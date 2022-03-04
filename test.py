@@ -1,4 +1,5 @@
 # 调用多个方法
+import base64
 import random
 import time
 
@@ -11,6 +12,7 @@ class Test:
     def get_random_time(self):
         return int(time.time() * 1000)
 
+    # 判断字符串是否是数字
     def is_number(self, s):
         try:
             float(s)
@@ -21,11 +23,15 @@ class Test:
         except ValueError:
             return False
 
+    def base64(self, base):
+        bytes = base.encode("utf-8")
+        str_url = base64.b64encode(bytes)
+        return str_url
+
 
 if __name__ == '__main__':
-    # s = '1496393241355599873'
-    s = '22baf927467b57426e98fa464cea2ccdc1'
-    print(Test().is_number(s))
+    s = 'Hy123!!!'
+    print(Test().base64(s))
 
 # MD5分支提交测试
 # 改变MD5分支会不会影响主干

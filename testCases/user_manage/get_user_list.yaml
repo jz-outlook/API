@@ -1,0 +1,14 @@
+-
+  name: 获取用户列表
+  request:
+    method: get
+    url: /user/list
+    params:
+      organizationId: ${read_extract_data(firm_id)}
+      curPage: 1
+      pageSize: 10
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

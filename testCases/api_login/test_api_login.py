@@ -10,7 +10,7 @@ from debug_talk import DebugTalk
 class TestApiLogin:
 
     # @pytest.mark.skip()
-    @pytest.mark.parametrize('args_name', read_case_yaml('./testcases/api_login/test_api_login.yaml'))
+    @pytest.mark.parametrize('args_name', read_case_yaml('./testCases/api_login/test_api_login.yaml'))
     def test_get_app(self, args_name):
         url = args_name['request']['url']
         data = args_name['request']['data']
