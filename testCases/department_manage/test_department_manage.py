@@ -3,7 +3,7 @@ import pytest
 from common.parameterize_util import read_case_yaml
 from common.requests_util import RequestsUtil
 
-from debug_talk import DebugTalk
+from Hotloads.debug_talk import DebugTalk
 
 
 class TestDepartment:

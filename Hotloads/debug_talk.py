@@ -1,7 +1,9 @@
 import random
 import time
 
-from common.yaml_util import read_extract_yaml
+import yaml
+
+from common.yaml_util import read_extract_yaml, get_object_path
 
 
 class DebugTalk:
@@ -17,7 +19,9 @@ class DebugTalk:
 
     # 读取extract文件中的值
     def read_extract_data(self, key):
-        return read_extract_yaml(key)
+        with open(get_object_path() + '/extract.yaml', mode='r', encoding='utf-8') as f:  # mode默认read
+            value = yaml.load(f, Loader=yaml.FullLoader)
+            return value[key]
 
 
 if __name__ == '__main__':

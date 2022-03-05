@@ -8,9 +8,8 @@ import requests
 
 from common.Md5 import MD5
 from common.logger_util import error_log, logs
-from common.yaml_util import read_config_yaml, write_extract_yaml, read_extract_yaml, get_object_path
-from debug_talk import DebugTalk
-from test import Test
+from common.yaml_util import read_config_yaml, write_extract_yaml, get_object_path
+from Hotloads.debug_talk import DebugTalk
 
 
 class RequestsUtil:
