@@ -173,7 +173,7 @@ class RequestsUtil:
     def assert_result(self, yq_result, sj_result, return_code):
         try:
             logs('预取结果: %s' % yq_result)
-            logs('实际结果: %s' % sj_result)
+            logs('实际结果: %s' % json.loads(json.dumps(sj_result).replace(r"\\", "\\")))
             all_flag = 0
             for yq_result in yq_result:
                 for key, value in yq_result.items():
@@ -219,7 +219,6 @@ class RequestsUtil:
             flag = flag + 1
             error_log("断言失败：返回的结果中不包含" + str(value))
         return flag
-
 
     def md5_yaml(self, caseinfo):
         try:
@@ -274,5 +273,3 @@ class RequestsUtil:
                     self.assert_result(caseinfo['validate'], results_json, return_code)
         except Exception as e:
             error_log("规范yaml测试用例standard_yaml异常: %s" % str(traceback.format_exc()))
-
-

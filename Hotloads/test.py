@@ -1,5 +1,6 @@
 # 调用多个方法
 import base64
+import json
 import random
 import time
 
@@ -30,8 +31,9 @@ class Test:
 
 
 if __name__ == '__main__':
-    s = 'Hy123!!!'
-    print(Test().base64(s))
+    # s = 'Hy123!!!'
+    # print(Test().base64(s))
 
-# MD5分支提交测试
-# 改变MD5分支会不会影响主干
+    a = {'tag': {'id': 197, 'name': '\\u7801\\u5c1a\\u6559\\u80b273321'}}
+    print(json.loads(json.dumps(a).replace(r"\\", '\\')))
+    print(a)
