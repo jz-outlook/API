@@ -1,6 +1,6 @@
 -
   name: 获取用户列表
-  requests:
+  request:
     method: get
     url: /user/list
     params:

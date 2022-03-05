@@ -8,4 +8,7 @@
       ClientSecret: KAqhE9ESS7T5Y1QoS7wg1T62BNr8KtbN9jVgEhac4uWTkFzGYve6d6A5ZbkR
       timestamp: ''
       sign: ''
-  validate: None
+  extract:
+    accessToken: '"accessToken":"(.*?)"'
+  validate:
+    - equals: {code: 200}

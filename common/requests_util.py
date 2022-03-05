@@ -1,10 +1,12 @@
 import json
 import re
+import time
 import traceback
 
 import jsonpath
 import requests
 
+from common.Md5 import MD5
 from common.logger_util import error_log, logs
 from common.yaml_util import read_config_yaml, write_extract_yaml, read_extract_yaml, get_object_path
 from debug_talk import DebugTalk
@@ -218,3 +220,60 @@ class RequestsUtil:
             flag = flag + 1
             error_log("断言失败：返回的结果中不包含" + str(value))
         return flag
+
+
+    def md5_yaml(self, caseinfo):
+        try:
+            logs('------------测试开始------------')
+            caseinfo_keys = caseinfo.keys()
+            # 判断一级关键字是否包含有：name,request,validate
+            ###########
+            logs('------------测试开始------------')
+            caseinfo_keys = caseinfo.keys()
+            # 判断request下面是否包含：method,url
+            requests_keys = caseinfo['request']
+            requests_keys = requests_keys['data']
+            clientId = requests_keys['clientId']
+            ClientSecret = requests_keys['ClientSecret']
+            timestamp = str(int(time.time() * 1000))
+            requests_keys['timestamp'] = timestamp
+            requests_keys['sign'] = MD5(clientId + ClientSecret + timestamp)
+            # 发送请求
+            name = caseinfo.pop("name")
+            logs('接口名称: %s' % name)
+            method = caseinfo['request'].pop("method")
+            url = caseinfo['request'].pop("url")
+            # 调用send_request发起请求
+            req = self.send_request(method, url, **caseinfo['request'])
+
+            #################
+            return_text = req.text
+            return_code = req.status_code
+            results_json = None
+            try:
+                results_json = req.json()
+            except Exception as e:
+                error_log('返回的格式不是JSON格式，不能使用jsonPath提取')
+            # 提取Cookie值写入到extract.yaml
+            # 判断extract是不是在caseInfo_keys下
+            if "extract" in caseinfo_keys:
+                # 遍历extract中的值，如果有则使用re正则方式进行提取写入
+                for key, value in caseinfo['extract'].items():
+                    if "(.*?)" in value or "(.+?)" in value:
+                        re_value = re.search(value, return_text)
+                        if re_value:
+                            extract_value = {key: re_value.group(1)}
+                            write_extract_yaml(extract_value)
+                    else:
+                        # jsonPath方式提取
+                        jsonvalue = jsonpath.jsonpath(results_json, value)
+                        if jsonvalue:
+                            extract_value = {key: jsonvalue[0]}
+                            write_extract_yaml(extract_value)
+                    # 断言
+                    # 预期结果caseinfo['validate']，实际结果results_json
+                    self.assert_result(caseinfo['validate'], results_json, return_code)
+        except Exception as e:
+            error_log("规范yaml测试用例standard_yaml异常: %s" % str(traceback.format_exc()))
+
+
