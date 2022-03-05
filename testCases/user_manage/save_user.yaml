@@ -1,5 +1,5 @@
 -
-  name: 获取用户列表
+  name: 新增用户
   request:
     method: post
     url: /user/save
@@ -8,7 +8,7 @@
       loginName: ceshiuser
       name: '张三'
       organizationIds: ${read_extract_data(firm_id)}
-      password: SHkxMjMhISE=
+      password: ${base64(hy123!!!)}
       email:
       phone:
     headers:

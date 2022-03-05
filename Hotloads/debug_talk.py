@@ -1,3 +1,5 @@
+import base64
+import hashlib
 import random
 import time
 
@@ -22,7 +24,21 @@ class DebugTalk:
         with open(get_object_path() + '/extract.yaml', mode='r', encoding='utf-8') as f:  # mode默认read
             value = yaml.load(f, Loader=yaml.FullLoader)
             return value[key]
+    def base64_str(self, base):
+        bytes = base.encode("utf-8")
+        str_url = base64.b64encode(bytes)
+        return str_url
 
+    def MD5(self, args):
+        utf8_str = str(args).encode('utf-8')
+        md5_str = hashlib.md5(utf8_str).hexdigest()
+        # md5_str.upper() 大写
+        return md5_str
+
+    def base64(self, base):
+        utf8_str = str(base).encode('utf-8')
+        base64_str = base64.b64encode(utf8_str).decode('utf-8')
+        return base64_str
 
 if __name__ == '__main__':
-    print(DebugTalk().read_extract_data("Cookie"))
+    print(DebugTalk().base64_str("hy123!!!"))
