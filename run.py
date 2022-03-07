@@ -8,13 +8,3 @@ if __name__ == '__main__':
     # allyre 生成测试报告
     # pytest.main(['-vs', '--alluredir', './temps'])
     # os.system("allure generate ./temps -o ./reports --clean")
-
-
-
-
-
-
-
-
-
-# 同步不过去了
