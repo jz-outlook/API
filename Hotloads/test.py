@@ -75,9 +75,6 @@ class Test:
         mingwen = rsa.decrypt(byte_str, private).decode()
         return mingwen
 
-    # # sing
-    # def
-
 
 if __name__ == '__main__':
     print(Test().base64('hy123!!!'))
