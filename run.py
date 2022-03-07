@@ -9,3 +9,8 @@ if __name__ == '__main__':
     # pytest.main(['-vs', '--alluredir', './temps'])
     # os.system("allure generate ./temps -o ./reports --clean")
 
+
+
+
+
+
