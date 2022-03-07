@@ -15,8 +15,6 @@ class LoggerUtil:
         if not self.logger.handlers:
             # 创建文件日志路径
             time_stamp = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-            # self.filt_log_path = get_object_path() + '/logs/' + read_config_yaml("log", 'log_name') + str(
-            #     int(time.time())) + ".log"
             self.filt_log_path = get_object_path() + '/logs/' + read_config_yaml("log", 'log_name') + str(time_stamp) + ".log"
             # 创建文件日志的控制器
             self.file_hander = logging.FileHandler(self.filt_log_path, encoding='utf-8')
@@ -71,3 +69,8 @@ def error_log(message):
 
 def logs(message):
     LoggerUtil().create_log().info(message)
+
+
+if __name__ == '__main__':
+    time_stamp = time.strftime('%Y-%m-%d',time.localtime(time.time()))
+    print(time_stamp)
