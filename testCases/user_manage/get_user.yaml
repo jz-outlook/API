@@ -1,0 +1,11 @@
+-
+  name: 查询用户
+  request:
+    method: get
+    url: /user/get/${read_extract_data(user_id)}
+    params:
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

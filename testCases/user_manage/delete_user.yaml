@@ -1,0 +1,11 @@
+-
+  name: 删除用户
+  request:
+    method: delete
+    url: /user/delete/${read_extract_data(user_id)}
+    params:
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

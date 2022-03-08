@@ -1,10 +1,10 @@
 -
-  name: 新增用户
+  name: 修改用户
   request:
     method: post
     url: /user/save
     data:
-      id:
+      id: ${read_extract_data(user_id)}
       loginName: ${get_random_number(1111,9999)}
       name: ${get_random_number(1111,9999)}
       organizationIds: ${read_extract_data(firm_id)}
@@ -13,8 +13,6 @@
       phone:
     headers:
       accessToken: ${read_extract_data(accessToken)}
-  extract:
-    user_id: '"id":"(.*?)"'
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}
