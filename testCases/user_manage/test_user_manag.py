@@ -10,7 +10,7 @@ from Hotloads.debug_talk import DebugTalk
 
 @allure.epic("接口自动化测试平台")
 @allure.feature("用户管理模块")
-class TestDepartment:
+class TestUser:
 
     @allure.story("获取用户列表")
     @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/user_manage/get_user_list.yaml'))

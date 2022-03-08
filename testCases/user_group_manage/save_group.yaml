@@ -1,0 +1,17 @@
+-
+  name: 新增用户组
+  request:
+    method: post
+    url: /user/group/save
+    data:
+      id:
+      name: ${get_random_number(1111,9999)}
+      organizationIds:
+      userIds:
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  extract:
+    group_id:  '"id":"(.*?)"'
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}
