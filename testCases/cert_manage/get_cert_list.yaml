@@ -1,0 +1,13 @@
+-
+  name: 获取证书列表
+  request:
+    method: get
+    url: /cert/list
+    params:
+      curPage: 1
+      pageSize: 10
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

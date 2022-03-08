@@ -1,0 +1,15 @@
+-
+  name: 新增证书
+  request:
+    method: post
+    url: /cert/save
+    params:
+      id: 1
+      name: 10
+      serverCert:
+      serverPrivKey:
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

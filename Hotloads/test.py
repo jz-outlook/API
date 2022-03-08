@@ -77,7 +77,7 @@ class Test:
 
 
 if __name__ == '__main__':
-    print(Test().base64('hy123!!!'))
+    print(Test().create_key())
     # print(Test().public_key_encryption('admin'))
     # print(Test().private_key_decode('c3fuuILtI49JW1O0J+qSzhT6u4YJ85E4NxdYwCzuc5cFIFCLDxE6T9zIqpIzGB9E1+vlm0ktQ1ZPbyOKYxMdYOjcTM5tlc2qN3DTfHxJokZXvLTwoe5MNi12LrTd2VGBOa5L81kAyLafpmAxjxx9BzaMS6eNgVI49gfz5Joe9Fk='))
 
