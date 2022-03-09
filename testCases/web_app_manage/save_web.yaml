@@ -1,0 +1,27 @@
+-
+  name: 添加WEB应用
+  request:
+    method: post
+    url: /web-app/save
+    data:
+      id:
+      name: test
+      protectedDomain: www.1111.com
+      cookieDomain: test01.com
+      serviceHost: 192.168.0.110
+      userProtocol: 0
+      protocol: 0
+      port: 80
+      inOutNet: 0
+      gatewayId:
+      proxyType: 0
+      userGroupIds:
+      userIds:
+      organizationIds:
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  extract:
+    app_id: '"id":"(.*?)"'
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

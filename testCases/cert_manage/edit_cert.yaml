@@ -63,8 +63,6 @@
         -----END PRIVATE KEY-----
     headers:
       accessToken: ${read_extract_data(accessToken)}
-  extract:
-    cert_id: '"id":"(.*?)"'
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}

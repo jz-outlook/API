@@ -1,0 +1,11 @@
+-
+  name: 修改WEB应用
+  request:
+    method: delete
+    url: /web-app/delete/${read_extract_data(app_id)}
+    data:
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

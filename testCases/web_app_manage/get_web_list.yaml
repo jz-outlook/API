@@ -1,0 +1,13 @@
+-
+  name: 获取WEB列表
+  request:
+    method: get
+    url: /web-app/list
+    params:
+      curPage: 1
+      pageSize: 10
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}
