@@ -4,7 +4,7 @@ from common.parameterize_util import read_case_yaml
 from common.requests_util import RequestsUtil
 from Hotloads.debug_talk import DebugTalk
 
-@allure.epic("接口自动化测试平台")
+@allure.epic("接口自动化测试")
 @allure.feature("获取统一鉴权码")
 class TestApiLogin:
 
