@@ -18,6 +18,16 @@ class TestUserGroups:
         RequestsUtil('base_api_url', DebugTalk()).standard_yaml(caseinfo)
 
     @allure.story("新增证书")
-    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/cert_manage/save_cert_list.yaml'))
+    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/cert_manage/save_cert.yaml'))
     def test_save_cert_list(self, caseinfo):
+        RequestsUtil('base_api_url', DebugTalk()).standard_yaml(caseinfo)
+
+    @allure.story("编辑证书")
+    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/cert_manage/edit_cert.yaml'))
+    def test_edit_cert(self, caseinfo):
+        RequestsUtil('base_api_url', DebugTalk()).standard_yaml(caseinfo)
+
+    @allure.story("删除证书")
+    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/cert_manage/delete_cert.yaml'))
+    def test_delete_cert(self, caseinfo):
         RequestsUtil('base_api_url', DebugTalk()).standard_yaml(caseinfo)

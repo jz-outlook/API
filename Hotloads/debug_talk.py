@@ -41,4 +41,4 @@ class DebugTalk:
         return base64_str
 
 if __name__ == '__main__':
-    print(DebugTalk().base64_str("hy123!!!"))
+    print(DebugTalk().get_random_time())

@@ -4,7 +4,8 @@
     method: post
     url: /cert/save
     data:
-      name: ${get_random_number(1,100)}
+      id: ${read_extract_data(cert_id)}
+      name: 修改证书名称
       serverCert: |2
         -----BEGIN CERTIFICATE-----
         MIIERzCCAq+gAwIBAgIRAO82IIwpXiVbgRIGTPIWUqYwDQYJKoZIhvcNAQELBQAw
@@ -62,6 +63,8 @@
         -----END PRIVATE KEY-----
     headers:
       accessToken: ${read_extract_data(accessToken)}
+  extract:
+    cert_id: '"id":"(.*?)"'
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}

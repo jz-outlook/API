@@ -1,0 +1,10 @@
+-
+  name: 删除证书
+  request:
+    method: delete
+    url: /cert/delete/${read_extract_data(cert_id)}
+    headers:
+      accessToken: ${read_extract_data(accessToken)}
+  validate:
+    - equals: {code: 200}
+    - equals: {message: '成功'}

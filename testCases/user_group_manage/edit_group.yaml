@@ -10,8 +10,6 @@
       userIds:
     headers:
       accessToken: ${read_extract_data(accessToken)}
-  extract:
-    group_id:  '"id":"(.*?)"'
   validate:
     - equals: {code: 200}
     - equals: {message: '成功'}
