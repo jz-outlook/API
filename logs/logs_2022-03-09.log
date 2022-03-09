@@ -16875,3 +16875,39 @@ Exception: 断言失败：返回的结果中不包含clientId错误
 [2022-03-09 19:26:13,151] logger_util.py->logs line:71 [INFO] 请求接口成功
 [2022-03-09 19:26:13,151] logger_util.py->logs line:71 [INFO] ------------测试结束------------
 
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:37:17,116] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825837116', 'sign': '12c2b0c59ea8f11342dbd8cec7518332'}
+[2022-03-09 19:37:17,133] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 19:37:17,133] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'faec0866497c4d46b9e4d16f6b20ce77'}, 'success': True}
+[2022-03-09 19:37:17,133] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:37:17,134] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:37:17,137] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825837137', 'sign': '07bd380f3599924fed74f51e767ddcc8'}
+[2022-03-09 19:37:17,144] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 19:37:17,144] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:37:17,144] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:37:17,144] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] 接口名称: ClientSecret为空
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:37:17,147] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '1646825837147', 'sign': '2f28b46f739173fa11f40c50e3ec71fe'}
+[2022-03-09 19:37:17,157] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]
+[2022-03-09 19:37:17,157] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': '签名校验错误', 'success': False}
+[2022-03-09 19:37:17,157] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:37:17,157] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
