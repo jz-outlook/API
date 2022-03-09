@@ -16911,3 +16911,82 @@ Exception: 断言失败：返回的结果中不包含clientId错误
 [2022-03-09 19:37:17,157] logger_util.py->logs line:71 [INFO] 请求接口成功
 [2022-03-09 19:37:17,157] logger_util.py->logs line:71 [INFO] ------------测试结束------------
 
+[2022-03-09 22:11:36,116] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:36,116] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:36,116] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 22:11:36,116] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:11:36,117] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 22:11:36,117] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:11:36,117] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646835096116', 'sign': '730dbace02c229befc8737261568f9c7'}
+[2022-03-09 22:11:52,328] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:52,328] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:52,328] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 22:11:52,328] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:11:52,329] logger_util.py->logs line:71 [INFO] 请求路径: http://364y369t39.qicp.vip:21371/common/getToken
+[2022-03-09 22:11:52,329] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:11:52,329] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646835112328', 'sign': 'ce24ec1c1ff20c869e5d672a39ae7d12'}
+[2022-03-09 22:11:52,406] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 22:11:52,406] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'b75b7311f82c439dac925c2d9c153552'}, 'success': True}
+[2022-03-09 22:11:52,407] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 22:11:52,407] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 22:11:52,414] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:52,414] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:52,414] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 22:11:52,414] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:11:52,415] logger_util.py->logs line:71 [INFO] 请求路径: http://364y369t39.qicp.vip:21371/common/getToken
+[2022-03-09 22:11:52,415] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:11:52,415] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646835112414', 'sign': '72bf006c7572ffaca97b796c01531d92'}
+[2022-03-09 22:11:52,445] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 22:11:52,445] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 22:11:52,445] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 22:11:52,445] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 22:11:52,450] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:52,450] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:11:52,450] logger_util.py->logs line:71 [INFO] 接口名称: ClientSecret为空
+[2022-03-09 22:11:52,450] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:11:52,450] logger_util.py->logs line:71 [INFO] 请求路径: http://364y369t39.qicp.vip:21371/common/getToken
+[2022-03-09 22:11:52,450] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:11:52,452] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '1646835112450', 'sign': '6dbe28b99886cfa98c65a8a0c1af0012'}
+[2022-03-09 22:11:52,476] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]
+[2022-03-09 22:11:52,476] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': '签名校验错误', 'success': False}
+[2022-03-09 22:11:52,476] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 22:11:52,476] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 22:21:53,387] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:21:53,388] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:21:53,388] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 22:21:53,388] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:21:53,388] logger_util.py->logs line:71 [INFO] 请求路径: http://364y369t39.qicp.vip:21371/common/getToken
+[2022-03-09 22:21:53,388] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:21:53,388] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646835713388', 'sign': 'b90e3a01bfbc5536f10ace49c9611cf8'}
+[2022-03-09 22:21:53,448] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 22:21:53,449] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'e804781750db4d08a7662f0cc025793a'}, 'success': True}
+[2022-03-09 22:21:53,449] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 22:21:53,449] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 22:21:53,456] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:21:53,456] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:21:53,456] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 22:21:53,456] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:21:53,457] logger_util.py->logs line:71 [INFO] 请求路径: http://364y369t39.qicp.vip:21371/common/getToken
+[2022-03-09 22:21:53,457] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:21:53,457] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646835713456', 'sign': '77378ca8b25f47695be179c7fbfb5f80'}
+[2022-03-09 22:21:53,482] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 22:21:53,482] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 22:21:53,482] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 22:21:53,483] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 22:21:53,494] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:21:53,495] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 22:21:53,498] logger_util.py->logs line:71 [INFO] 接口名称: ClientSecret为空
+[2022-03-09 22:21:53,498] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 22:21:53,498] logger_util.py->logs line:71 [INFO] 请求路径: http://364y369t39.qicp.vip:21371/common/getToken
+[2022-03-09 22:21:53,498] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 22:21:53,498] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '1646835713498', 'sign': '1646e1a75b8e8b43bd51ab063e41489a'}
+[2022-03-09 22:21:53,523] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]
+[2022-03-09 22:21:53,523] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': '签名校验错误', 'success': False}
+[2022-03-09 22:21:53,523] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 22:21:53,524] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
