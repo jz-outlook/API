@@ -4,8 +4,8 @@
     method: post
     url: /common/getToken
     data:
-      clientId: Wd7tZG1BUXUpKg05jNdACoOzVo7I19qy
-      ClientSecret: KAqhE9ESS7T5Y1QoS7wg1T62BNr8KtbN9jVgEhac4uWTkFzGYve6d6A5ZbkR
+      clientId: OgaMTDeLuzElOA7WOHZOYo5ezloC87sV
+      ClientSecret: p7LOsJBeLnqAlcaJqf8nSZ7przmc7ZrlwIWTZ8lqOct2NOOrBQAElCmigme7
       timestamp: ''
       sign: ''
   extract:
