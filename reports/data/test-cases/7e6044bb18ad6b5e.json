@@ -1,0 +1,150 @@
+{
+  "uid" : "7e6044bb18ad6b5e",
+  "name" : "test_get_department_list[caseinfo2]",
+  "fullName" : "testCases.api_login.test_api_login.TestApiLogin#test_get_department_list",
+  "historyId" : "b0d17fe97b44e9b1f62b1457283618ff",
+  "time" : {
+    "start" : 1646825837146,
+    "stop" : 1646825837157,
+    "duration" : 11
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 2,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1646825837111,
+      "stop" : 1646825837111,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "clear_extract",
+    "time" : {
+      "start" : 1646825837112,
+      "stop" : 1646825837112,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "_verify_url",
+    "time" : {
+      "start" : 1646825837112,
+      "stop" : 1646825837112,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9b22fb65a6140ba",
+      "name" : "log",
+      "source" : "a9b22fb65a6140ba.txt",
+      "type" : "text/plain",
+      "size" : 912
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "接口自动化测试"
+  }, {
+    "name" : "feature",
+    "value" : "获取统一鉴权码"
+  }, {
+    "name" : "story",
+    "value" : "获取统一鉴权码接口"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testCases.api_login"
+  }, {
+    "name" : "suite",
+    "value" : "test_api_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestApiLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-T07RCO4"
+  }, {
+    "name" : "thread",
+    "value" : "33648-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testCases.api_login.test_api_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "caseinfo",
+    "value" : "{'name': 'ClientSecret为空', 'parameterize': {'name-clientId-ClientSecret-contains': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "aa046f3816a0b037",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646825173144,
+        "stop" : 1646825173152,
+        "duration" : 8
+      }
+    }, {
+      "uid" : "8d18bf673c1b2156",
+      "status" : "broken",
+      "statusDetails" : "Exception: 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 184, in assert_result\n    flag = self.contains_assert(value, sj_result)\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 220, in contains_assert\n    error_log(\"断言失败：返回的结果中不包含\" + str(value))\n  File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\n    raise Exception(message)\nException: 断言失败：返回的结果中不包含clientId错误\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 273, in md5_yaml\n    self.assert_result(caseinfo['validate'], results_json, return_code)\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 194, in assert_result\n    error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\n  File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\n    raise Exception(message)\nException: 判断断言assert_result异常: Traceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 184, in assert_result\n    flag = self.contains_assert(value, sj_result)\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 220, in contains_assert\n    error_log(\"断言失败：返回的结果中不包含\" + str(value))\n  File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\n    raise Exception(message)\nException: 断言失败：返回的结果中不包含clientId错误",
+      "time" : {
+        "start" : 1646825153464,
+        "stop" : 1646825153474,
+        "duration" : 10
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7e6044bb18ad6b5e.json",
+  "parameterValues" : [ "{'name': 'ClientSecret为空', 'parameterize': {'name-clientId-ClientSecret-contains': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]}" ]
+}

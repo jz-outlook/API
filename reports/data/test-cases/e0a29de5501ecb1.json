@@ -1,0 +1,135 @@
+{
+  "uid" : "e0a29de5501ecb1",
+  "name" : "test_get_department_list[caseinfo0]",
+  "fullName" : "testCases.api_login.test_api_login.TestApiLogin#test_get_department_list",
+  "historyId" : "0552364a65d740771dfa0023ff945d7c",
+  "time" : {
+    "start" : 1646824848612,
+    "stop" : 1646824848653,
+    "duration" : 41
+  },
+  "status" : "broken",
+  "statusMessage" : "Exception: 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\n    for key, value in yq_result.items():\nAttributeError: 'str' object has no attribute 'items'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 273, in md5_yaml\n    self.assert_result(caseinfo['validate'], results_json, return_code)\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 194, in assert_result\n    error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\n  File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\n    raise Exception(message)\nException: 判断断言assert_result异常: Traceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\n    for key, value in yq_result.items():\nAttributeError: 'str' object has no attribute 'items'",
+  "statusTrace" : "self = <common.requests_util.RequestsUtil object at 0x000001A2B101E2B0>\nyq_result = '$'\nsj_result = {'code': 200, 'data': {'accessToken': 'f98c8f4bbc3945e1bf3d42cbcb5c1fc3'}, 'message': '成功', 'success': True}\nreturn_code = 200\n\n    def assert_result(self, yq_result, sj_result, return_code):\n        try:\n            logs('预取结果: %s' % yq_result)\n            logs('实际结果: %s' % json.loads(json.dumps(sj_result).replace(r\"\\\\\", \"\\\\\")))\n            all_flag = 0\n            for yq_result in yq_result:\n>               for key, value in yq_result.items():\nE               AttributeError: 'str' object has no attribute 'items'\n\ncommon\\requests_util.py:179: AttributeError\n\nDuring handling of the above exception, another exception occurred:\n\nself = <common.requests_util.RequestsUtil object at 0x000001A2B101E2B0>\ncaseinfo = {'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'parameterize': {'name-clientId-ClientSecret-equals': '/data/api...QsnBIwU025E', 'sign': '464a0711806030c1cf86301400900999', 'timestamp': '1646824848616'}}, 'validate': '$ddt{validate}'}\n\n    def md5_yaml(self, caseinfo):\n        try:\n            logs('------------测试开始------------')\n            caseinfo_keys = caseinfo.keys()\n            # 判断一级关键字是否包含有：name,request,validate\n            ###########\n            logs('------------测试开始------------')\n            caseinfo_keys = caseinfo.keys()\n            # 判断request下面是否包含：method,url\n            requests_keys = caseinfo['request']\n            requests_keys = requests_keys['data']\n            clientId = requests_keys['clientId']\n            ClientSecret = requests_keys['ClientSecret']\n            timestamp = str(int(time.time() * 1000))\n            requests_keys['timestamp'] = timestamp\n            requests_keys['sign'] = MD5(clientId + ClientSecret + timestamp)\n            # 发送请求\n            name = caseinfo.pop(\"name\")\n            logs('接口名称: %s' % name)\n            method = caseinfo['request'].pop(\"method\")\n            url = caseinfo['request'].pop(\"url\")\n            # 调用send_request发起请求\n            req = self.send_request(method, url, **caseinfo['request'])\n    \n            #################\n            return_text = req.text\n            return_code = req.status_code\n            results_json = None\n            try:\n                results_json = req.json()\n            except Exception as e:\n                error_log('返回的格式不是JSON格式，不能使用jsonPath提取')\n            # 提取Cookie值写入到extract.yaml\n            # 判断extract是不是在caseInfo_keys下\n            if \"extract\" in caseinfo_keys:\n                # 遍历extract中的值，如果有则使用re正则方式进行提取写入\n                for key, value in caseinfo['extract'].items():\n                    if \"(.*?)\" in value or \"(.+?)\" in value:\n                        re_value = re.search(value, return_text)\n                        if re_value:\n                            extract_value = {key: re_value.group(1)}\n                            write_extract_yaml(extract_value)\n                    else:\n                        # jsonPath方式提取\n                        jsonvalue = jsonpath.jsonpath(results_json, value)\n                        if jsonvalue:\n                            extract_value = {key: jsonvalue[0]}\n                            write_extract_yaml(extract_value)\n                    # 断言\n                    # 预期结果caseinfo['validate']，实际结果results_json\n>                   self.assert_result(caseinfo['validate'], results_json, return_code)\n\ncommon\\requests_util.py:273: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <common.requests_util.RequestsUtil object at 0x000001A2B101E2B0>\nyq_result = '$'\nsj_result = {'code': 200, 'data': {'accessToken': 'f98c8f4bbc3945e1bf3d42cbcb5c1fc3'}, 'message': '成功', 'success': True}\nreturn_code = 200\n\n    def assert_result(self, yq_result, sj_result, return_code):\n        try:\n            logs('预取结果: %s' % yq_result)\n            logs('实际结果: %s' % json.loads(json.dumps(sj_result).replace(r\"\\\\\", \"\\\\\")))\n            all_flag = 0\n            for yq_result in yq_result:\n                for key, value in yq_result.items():\n                    if key == \"equals\":\n                        flag = self.equals_assert(value, sj_result, return_code)\n                        all_flag = all_flag + flag\n                    elif key == \"contains\":\n                        flag = self.contains_assert(value, sj_result)\n                        all_flag = all_flag + flag\n                    else:\n                        print(\"不支持该断言方式\")\n            assert all_flag == 0\n            logs('请求接口成功')\n            logs('------------测试结束------------\\n')\n        except Exception as e:\n            logs('请求接口失败')\n            logs('------------测试结束------------\\n')\n>           error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\n\ncommon\\requests_util.py:194: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nmessage = '判断断言assert_result异常: Traceback (most recent call last):\\n  File \"D:\\\\Desktop\\\\1\\\\API\\\\common\\\\requests_util.py\", line...n assert_result\\n    for key, value in yq_result.items():\\nAttributeError: \\'str\\' object has no attribute \\'items\\'\\n'\n\n    def error_log(message):\n        LoggerUtil().create_log().error(message)\n>       raise Exception(message)\nE       Exception: 判断断言assert_result异常: Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\nE           for key, value in yq_result.items():\nE       AttributeError: 'str' object has no attribute 'items'\n\ncommon\\logger_util.py:68: Exception\n\nDuring handling of the above exception, another exception occurred:\n\nself = <testCases.api_login.test_api_login.TestApiLogin object at 0x000001A2B0FFB490>\ncaseinfo = {'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'parameterize': {'name-clientId-ClientSecret-equals': '/data/api...QsnBIwU025E', 'sign': '464a0711806030c1cf86301400900999', 'timestamp': '1646824848616'}}, 'validate': '$ddt{validate}'}\n\n    @allure.story(\"获取统一鉴权码接口\")\n    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/api_login/test_api_login.yaml'))\n    def test_get_department_list(self, caseinfo):\n>       RequestsUtil('base_api_url', DebugTalk()).md5_yaml(caseinfo)\n\ntestCases\\api_login\\test_api_login.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\ncommon\\requests_util.py:275: in md5_yaml\n    error_log(\"规范yaml测试用例standard_yaml异常: %s\" % str(traceback.format_exc()))\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nmessage = '规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\\n  File \"D:\\\\Desktop\\\\1\\\\API\\\\common\\\\requests_util.py\"...assert_result\\n    for key, value in yq_result.items():\\nAttributeError: \\'str\\' object has no attribute \\'items\\'\\n\\n'\n\n    def error_log(message):\n        LoggerUtil().create_log().error(message)\n>       raise Exception(message)\nE       Exception: 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\nE           for key, value in yq_result.items():\nE       AttributeError: 'str' object has no attribute 'items'\nE       \nE       During handling of the above exception, another exception occurred:\nE       \nE       Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 273, in md5_yaml\nE           self.assert_result(caseinfo['validate'], results_json, return_code)\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 194, in assert_result\nE           error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\nE         File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\nE           raise Exception(message)\nE       Exception: 判断断言assert_result异常: Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\nE           for key, value in yq_result.items():\nE       AttributeError: 'str' object has no attribute 'items'\n\ncommon\\logger_util.py:68: Exception",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1646824848611,
+      "stop" : 1646824848611,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "_verify_url",
+    "time" : {
+      "start" : 1646824848611,
+      "stop" : 1646824848611,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "clear_extract",
+    "time" : {
+      "start" : 1646824848611,
+      "stop" : 1646824848611,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "Exception: 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\n    for key, value in yq_result.items():\nAttributeError: 'str' object has no attribute 'items'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 273, in md5_yaml\n    self.assert_result(caseinfo['validate'], results_json, return_code)\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 194, in assert_result\n    error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\n  File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\n    raise Exception(message)\nException: 判断断言assert_result异常: Traceback (most recent call last):\n  File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\n    for key, value in yq_result.items():\nAttributeError: 'str' object has no attribute 'items'",
+    "statusTrace" : "self = <common.requests_util.RequestsUtil object at 0x000001A2B101E2B0>\nyq_result = '$'\nsj_result = {'code': 200, 'data': {'accessToken': 'f98c8f4bbc3945e1bf3d42cbcb5c1fc3'}, 'message': '成功', 'success': True}\nreturn_code = 200\n\n    def assert_result(self, yq_result, sj_result, return_code):\n        try:\n            logs('预取结果: %s' % yq_result)\n            logs('实际结果: %s' % json.loads(json.dumps(sj_result).replace(r\"\\\\\", \"\\\\\")))\n            all_flag = 0\n            for yq_result in yq_result:\n>               for key, value in yq_result.items():\nE               AttributeError: 'str' object has no attribute 'items'\n\ncommon\\requests_util.py:179: AttributeError\n\nDuring handling of the above exception, another exception occurred:\n\nself = <common.requests_util.RequestsUtil object at 0x000001A2B101E2B0>\ncaseinfo = {'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'parameterize': {'name-clientId-ClientSecret-equals': '/data/api...QsnBIwU025E', 'sign': '464a0711806030c1cf86301400900999', 'timestamp': '1646824848616'}}, 'validate': '$ddt{validate}'}\n\n    def md5_yaml(self, caseinfo):\n        try:\n            logs('------------测试开始------------')\n            caseinfo_keys = caseinfo.keys()\n            # 判断一级关键字是否包含有：name,request,validate\n            ###########\n            logs('------------测试开始------------')\n            caseinfo_keys = caseinfo.keys()\n            # 判断request下面是否包含：method,url\n            requests_keys = caseinfo['request']\n            requests_keys = requests_keys['data']\n            clientId = requests_keys['clientId']\n            ClientSecret = requests_keys['ClientSecret']\n            timestamp = str(int(time.time() * 1000))\n            requests_keys['timestamp'] = timestamp\n            requests_keys['sign'] = MD5(clientId + ClientSecret + timestamp)\n            # 发送请求\n            name = caseinfo.pop(\"name\")\n            logs('接口名称: %s' % name)\n            method = caseinfo['request'].pop(\"method\")\n            url = caseinfo['request'].pop(\"url\")\n            # 调用send_request发起请求\n            req = self.send_request(method, url, **caseinfo['request'])\n    \n            #################\n            return_text = req.text\n            return_code = req.status_code\n            results_json = None\n            try:\n                results_json = req.json()\n            except Exception as e:\n                error_log('返回的格式不是JSON格式，不能使用jsonPath提取')\n            # 提取Cookie值写入到extract.yaml\n            # 判断extract是不是在caseInfo_keys下\n            if \"extract\" in caseinfo_keys:\n                # 遍历extract中的值，如果有则使用re正则方式进行提取写入\n                for key, value in caseinfo['extract'].items():\n                    if \"(.*?)\" in value or \"(.+?)\" in value:\n                        re_value = re.search(value, return_text)\n                        if re_value:\n                            extract_value = {key: re_value.group(1)}\n                            write_extract_yaml(extract_value)\n                    else:\n                        # jsonPath方式提取\n                        jsonvalue = jsonpath.jsonpath(results_json, value)\n                        if jsonvalue:\n                            extract_value = {key: jsonvalue[0]}\n                            write_extract_yaml(extract_value)\n                    # 断言\n                    # 预期结果caseinfo['validate']，实际结果results_json\n>                   self.assert_result(caseinfo['validate'], results_json, return_code)\n\ncommon\\requests_util.py:273: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <common.requests_util.RequestsUtil object at 0x000001A2B101E2B0>\nyq_result = '$'\nsj_result = {'code': 200, 'data': {'accessToken': 'f98c8f4bbc3945e1bf3d42cbcb5c1fc3'}, 'message': '成功', 'success': True}\nreturn_code = 200\n\n    def assert_result(self, yq_result, sj_result, return_code):\n        try:\n            logs('预取结果: %s' % yq_result)\n            logs('实际结果: %s' % json.loads(json.dumps(sj_result).replace(r\"\\\\\", \"\\\\\")))\n            all_flag = 0\n            for yq_result in yq_result:\n                for key, value in yq_result.items():\n                    if key == \"equals\":\n                        flag = self.equals_assert(value, sj_result, return_code)\n                        all_flag = all_flag + flag\n                    elif key == \"contains\":\n                        flag = self.contains_assert(value, sj_result)\n                        all_flag = all_flag + flag\n                    else:\n                        print(\"不支持该断言方式\")\n            assert all_flag == 0\n            logs('请求接口成功')\n            logs('------------测试结束------------\\n')\n        except Exception as e:\n            logs('请求接口失败')\n            logs('------------测试结束------------\\n')\n>           error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\n\ncommon\\requests_util.py:194: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nmessage = '判断断言assert_result异常: Traceback (most recent call last):\\n  File \"D:\\\\Desktop\\\\1\\\\API\\\\common\\\\requests_util.py\", line...n assert_result\\n    for key, value in yq_result.items():\\nAttributeError: \\'str\\' object has no attribute \\'items\\'\\n'\n\n    def error_log(message):\n        LoggerUtil().create_log().error(message)\n>       raise Exception(message)\nE       Exception: 判断断言assert_result异常: Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\nE           for key, value in yq_result.items():\nE       AttributeError: 'str' object has no attribute 'items'\n\ncommon\\logger_util.py:68: Exception\n\nDuring handling of the above exception, another exception occurred:\n\nself = <testCases.api_login.test_api_login.TestApiLogin object at 0x000001A2B0FFB490>\ncaseinfo = {'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'parameterize': {'name-clientId-ClientSecret-equals': '/data/api...QsnBIwU025E', 'sign': '464a0711806030c1cf86301400900999', 'timestamp': '1646824848616'}}, 'validate': '$ddt{validate}'}\n\n    @allure.story(\"获取统一鉴权码接口\")\n    @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/api_login/test_api_login.yaml'))\n    def test_get_department_list(self, caseinfo):\n>       RequestsUtil('base_api_url', DebugTalk()).md5_yaml(caseinfo)\n\ntestCases\\api_login\\test_api_login.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\ncommon\\requests_util.py:275: in md5_yaml\n    error_log(\"规范yaml测试用例standard_yaml异常: %s\" % str(traceback.format_exc()))\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nmessage = '规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\\n  File \"D:\\\\Desktop\\\\1\\\\API\\\\common\\\\requests_util.py\"...assert_result\\n    for key, value in yq_result.items():\\nAttributeError: \\'str\\' object has no attribute \\'items\\'\\n\\n'\n\n    def error_log(message):\n        LoggerUtil().create_log().error(message)\n>       raise Exception(message)\nE       Exception: 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\nE           for key, value in yq_result.items():\nE       AttributeError: 'str' object has no attribute 'items'\nE       \nE       During handling of the above exception, another exception occurred:\nE       \nE       Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 273, in md5_yaml\nE           self.assert_result(caseinfo['validate'], results_json, return_code)\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 194, in assert_result\nE           error_log(\"判断断言assert_result异常: %s\" % str(traceback.format_exc()))\nE         File \"D:\\Desktop\\1\\API\\common\\logger_util.py\", line 68, in error_log\nE           raise Exception(message)\nE       Exception: 判断断言assert_result异常: Traceback (most recent call last):\nE         File \"D:\\Desktop\\1\\API\\common\\requests_util.py\", line 179, in assert_result\nE           for key, value in yq_result.items():\nE       AttributeError: 'str' object has no attribute 'items'\n\ncommon\\logger_util.py:68: Exception",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "41f9bcde9a3eb295",
+      "name" : "log",
+      "source" : "41f9bcde9a3eb295.txt",
+      "type" : "text/plain",
+      "size" : 2298
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "获取统一鉴权码接口"
+  }, {
+    "name" : "feature",
+    "value" : "获取统一鉴权码"
+  }, {
+    "name" : "epic",
+    "value" : "接口自动化测试"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testCases.api_login"
+  }, {
+    "name" : "suite",
+    "value" : "test_api_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestApiLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-T07RCO4"
+  }, {
+    "name" : "thread",
+    "value" : "23328-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testCases.api_login.test_api_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "caseinfo",
+    "value" : "{'name': '成功登录api获取token', 'parameterize': {'name-clientId-ClientSecret-equals': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': '$ddt{validate}'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e0a29de5501ecb1.json",
+  "parameterValues" : [ "{'name': '成功登录api获取token', 'parameterize': {'name-clientId-ClientSecret-equals': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': '$ddt{validate}'}" ]
+}

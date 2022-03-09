@@ -1,0 +1,68 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "testCases.api_login",
+    "children" : [ {
+      "name" : "test_api_login",
+      "children" : [ {
+        "name" : "TestApiLogin",
+        "children" : [ {
+          "name" : "test_get_department_list[caseinfo0]",
+          "uid" : "d8a7219c421ec974",
+          "parentUid" : "fd468ad93331b828a7770a3506f533aa",
+          "status" : "passed",
+          "time" : {
+            "start" : 1646825837113,
+            "stop" : 1646825837134,
+            "duration" : 21
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 14,
+          "retriesStatusChange" : true,
+          "parameters" : [ "{'name': '成功登录api获取token', 'parameterize': {'name-clientId-ClientSecret-contains': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': [{'equals': {'code': 200}}, {'contains': 200}]}" ]
+        }, {
+          "name" : "test_get_department_list[caseinfo1]",
+          "uid" : "b691923acc4c81c6",
+          "parentUid" : "fd468ad93331b828a7770a3506f533aa",
+          "status" : "passed",
+          "time" : {
+            "start" : 1646825837136,
+            "stop" : 1646825837144,
+            "duration" : 8
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 14,
+          "retriesStatusChange" : true,
+          "parameters" : [ "{'name': 'clientId为空', 'parameterize': {'name-clientId-ClientSecret-contains': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]}" ]
+        }, {
+          "name" : "test_get_department_list[caseinfo2]",
+          "uid" : "7e6044bb18ad6b5e",
+          "parentUid" : "fd468ad93331b828a7770a3506f533aa",
+          "status" : "passed",
+          "time" : {
+            "start" : 1646825837146,
+            "stop" : 1646825837157,
+            "duration" : 11
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 2,
+          "retriesStatusChange" : true,
+          "parameters" : [ "{'name': 'ClientSecret为空', 'parameterize': {'name-clientId-ClientSecret-contains': '/data/api_login_manage/api_token_data.yaml'}, 'request': {'method': 'post', 'url': '/common/getToken', 'data': {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '', 'sign': ''}}, 'extract': {'accessToken': '\"accessToken\":\"(.*?)\"'}, 'validate': [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]}" ]
+        } ],
+        "uid" : "fd468ad93331b828a7770a3506f533aa"
+      } ],
+      "uid" : "675e23775b5ff80e8cb3427e5b5070f8"
+    } ],
+    "uid" : "dc62ecc329ec65511b3b9d1a73f3a819"
+  } ]
+}

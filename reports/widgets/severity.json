@@ -1,0 +1,31 @@
+[ {
+  "uid" : "7e6044bb18ad6b5e",
+  "name" : "test_get_department_list[caseinfo2]",
+  "time" : {
+    "start" : 1646825837146,
+    "stop" : 1646825837157,
+    "duration" : 11
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d8a7219c421ec974",
+  "name" : "test_get_department_list[caseinfo0]",
+  "time" : {
+    "start" : 1646825837113,
+    "stop" : 1646825837134,
+    "duration" : 21
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b691923acc4c81c6",
+  "name" : "test_get_department_list[caseinfo1]",
+  "time" : {
+    "start" : 1646825837136,
+    "stop" : 1646825837144,
+    "duration" : 8
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

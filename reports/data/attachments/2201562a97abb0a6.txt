@@ -1,0 +1,41 @@
+INFO     log:logger_util.py:71 ------------测试开始------------
+INFO     log:logger_util.py:71 ------------测试开始------------
+INFO     log:logger_util.py:71 接口名称: 成功新增部门
+INFO     log:logger_util.py:71 请求方式: post
+INFO     log:logger_util.py:71 请求路径: http://192.168.2.129:8088/common/getToken
+INFO     log:logger_util.py:71 请求头为空
+INFO     log:logger_util.py:71 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824623181', 'sign': 'b039b3e9597cd3fe7e97d8732be776f1'}
+INFO     log:logger_util.py:71 预取结果: [{'equals': '{code: 200}'}]
+INFO     log:logger_util.py:71 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'd4e109a0b1d74906bca4731eb0f0a99a'}, 'success': True}
+INFO     log:logger_util.py:71 请求接口失败
+INFO     log:logger_util.py:71 ------------测试结束------------
+
+ERROR    log:logger_util.py:67 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+ERROR    log:logger_util.py:67 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
