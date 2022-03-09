@@ -1,7 +1,7 @@
 -
   name: $ddt{name}
   parameterize:
-    name-parentId-contains: /data/save_department_manage/save_department_data.yaml
+    name-parentId-contains: /data/department_manage/save_department_data.yaml
   request:
     method: post
     url: /user/department/save

@@ -16039,3 +16039,839 @@ Exception: 断言失败：message不等于成功
 [2022-03-09 18:56:47,328] logger_util.py->logs line:71 [INFO] 请求接口成功
 [2022-03-09 18:56:47,328] logger_util.py->logs line:71 [INFO] ------------测试结束------------
 
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] 接口名称: 成功新增部门
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:17:03,181] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824623181', 'sign': 'b039b3e9597cd3fe7e97d8732be776f1'}
+[2022-03-09 19:17:03,203] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': '{code: 200}'}]
+[2022-03-09 19:17:03,203] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'd4e109a0b1d74906bca4731eb0f0a99a'}, 'success': True}
+[2022-03-09 19:17:03,203] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:17:03,203] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:17:03,209] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:17:03,213] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:17:03,301] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824623301', 'sign': '083989ae7e8aa85409110d450bb6a3ba'}
+[2022-03-09 19:17:03,315] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': '{code: 200}'}]
+[2022-03-09 19:17:03,316] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:17:03,316] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:17:03,316] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:17:03,316] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:17:03,316] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:18:43,066] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:18:43,067] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:18:43,067] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:18:43,067] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:18:43,067] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:18:43,067] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:18:43,067] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824723067', 'sign': '9bfafa7b5bb780da71f835a9b556cbb7'}
+[2022-03-09 19:18:43,086] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': "{'code': 200}"}]
+[2022-03-09 19:18:43,086] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'e9430fef5e6844be9a2657bf95bca110'}, 'success': True}
+[2022-03-09 19:18:43,086] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:18:43,086] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:18:43,087] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:18:43,087] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:18:43,170] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:18:43,170] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:18:43,171] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:18:43,171] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:18:43,171] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:18:43,171] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:18:43,171] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824723171', 'sign': '76c986fed6bad7bcfed0ec69f6c94a83'}
+[2022-03-09 19:18:43,193] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': '{code: 200}'}]
+[2022-03-09 19:18:43,193] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:18:43,193] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:18:43,193] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:18:43,193] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:18:43,194] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:19:25,080] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:19:25,080] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:19:25,080] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:19:25,080] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:19:25,080] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:19:25,081] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:19:25,081] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824765080', 'sign': '401a141d641f29406b3e78b0f698d350'}
+[2022-03-09 19:19:25,099] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}]
+[2022-03-09 19:19:25,099] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '7b236f144d6a455381df8369216554bc'}, 'success': True}
+[2022-03-09 19:19:25,099] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:19:25,099] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:19:25,102] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:19:25,102] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:19:25,102] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:19:25,103] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:19:25,103] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:19:25,103] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:19:25,103] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824765102', 'sign': 'ebf6910120a6c8c67d6655900685eaaf'}
+[2022-03-09 19:19:25,107] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}]
+[2022-03-09 19:19:25,107] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:19:25,107] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:19:25,108] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:20:04,601] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824804601', 'sign': '20c4c8a8d13e575572b193ace5d69b3a'}
+[2022-03-09 19:20:04,619] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}]
+[2022-03-09 19:20:04,620] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'f399ec2ee76f4489be5bfb48777555ee'}, 'success': True}
+[2022-03-09 19:20:04,620] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:20:04,620] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:20:04,623] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824804623', 'sign': '65fba081bb089430556a4ded36314f9a'}
+[2022-03-09 19:20:04,629] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}]
+[2022-03-09 19:20:04,629] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:20:04,629] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:20:04,629] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:20:25,083] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824825083', 'sign': '541d2c63b0bcdc4bf08ba03242e76936'}
+[2022-03-09 19:20:25,098] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}]
+[2022-03-09 19:20:25,098] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '00684f9f3d604300b67ac5b4d37e90cd'}, 'success': True}
+[2022-03-09 19:20:25,099] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:20:25,099] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:25,101] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:25,101] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:25,102] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:20:25,102] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:20:25,102] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:20:25,102] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:20:25,102] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824825102', 'sign': 'd0bb73e3006de7ee9e1fff4fefa77dbf'}
+[2022-03-09 19:20:25,108] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}]
+[2022-03-09 19:20:25,108] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:20:25,108] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:20:25,108] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:48,616] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:48,616] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:48,616] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:20:48,616] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:20:48,616] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:20:48,617] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:20:48,617] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824848616', 'sign': '464a0711806030c1cf86301400900999'}
+[2022-03-09 19:20:48,652] logger_util.py->logs line:71 [INFO] 预取结果: $ddt{validate}
+[2022-03-09 19:20:48,652] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'f98c8f4bbc3945e1bf3d42cbcb5c1fc3'}, 'success': True}
+[2022-03-09 19:20:48,653] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:20:48,653] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:48,653] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:20:48,653] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:20:48,734] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824848734', 'sign': 'e5ccd9230ff53de15f4cf20f8aeab348'}
+[2022-03-09 19:20:48,741] logger_util.py->logs line:71 [INFO] 预取结果: $ddt{validate}
+[2022-03-09 19:20:48,741] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:20:48,741] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:20:48,742] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:20:48,742] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:20:48,742] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:21:20,568] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:20,568] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:20,568] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:21:20,569] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:21:20,569] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:21:20,569] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:21:20,569] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824880568', 'sign': 'a3f497f3619444168a30eebf3ad38989'}
+[2022-03-09 19:21:20,584] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': '$ddt{validate}'}]
+[2022-03-09 19:21:20,585] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '6135072e967d44829c564f23fbacc716'}, 'success': True}
+[2022-03-09 19:21:20,585] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:21:20,585] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:21:20,585] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:21:20,585] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:21:20,670] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824880670', 'sign': '73ee0d911b21b426ed294c3ab13bd705'}
+[2022-03-09 19:21:20,679] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': '$ddt{validate}'}]
+[2022-03-09 19:21:20,679] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:21:20,679] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:21:20,679] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:21:20,679] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:21:20,680] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 199, in equals_assert
+    for assert_key, assert_value in value.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:21:50,839] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824910839', 'sign': '091923e89f24a007ff9eab6a833afd38'}
+[2022-03-09 19:21:50,853] logger_util.py->logs line:71 [INFO] 预取结果: ['$ddt{validate}']
+[2022-03-09 19:21:50,853] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'a784da1eb89e4c4c91385bd00b59c068'}, 'success': True}
+[2022-03-09 19:21:50,853] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:21:50,854] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:21:50,854] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:21:50,854] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:21:50,936] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:50,936] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:21:50,936] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:21:50,936] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:21:50,937] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:21:50,937] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:21:50,937] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646824910936', 'sign': 'b27b9fe036fb64ec61cead02a6b6b555'}
+[2022-03-09 19:21:50,945] logger_util.py->logs line:71 [INFO] 预取结果: ['$ddt{validate}']
+[2022-03-09 19:21:50,946] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:21:50,946] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:21:50,946] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:21:50,946] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+[2022-03-09 19:21:50,946] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 179, in assert_result
+    for key, value in yq_result.items():
+AttributeError: 'str' object has no attribute 'items'
+
+
+[2022-03-09 19:23:35,823] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:35,823] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:35,823] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:23:35,823] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:23:35,823] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:23:35,824] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:23:35,824] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825015823', 'sign': '27e7249ac2372635129c7c887733acdf'}
+[2022-03-09 19:23:35,835] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 400}}, {'contains': '$ddt{contains}'}]
+[2022-03-09 19:23:35,835] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '40c61b82f8d44f1095f7b8367db4be77'}, 'success': True}
+[2022-03-09 19:23:35,835] logger_util.py->error_log line:67 [ERROR] 断言失败：状态码不等于200
+[2022-03-09 19:23:35,835] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:23:35,835] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:23:35,835] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 203, in equals_assert
+    error_log("断言失败：状态码不等于%s" % return_code)
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：状态码不等于200
+
+[2022-03-09 19:23:35,836] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 203, in equals_assert
+    error_log("断言失败：状态码不等于%s" % return_code)
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：状态码不等于200
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 203, in equals_assert
+    error_log("断言失败：状态码不等于%s" % return_code)
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：状态码不等于200
+
+
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:23:35,921] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825015921', 'sign': '89e424f78d5af519ff9a018266171fb3'}
+[2022-03-09 19:23:35,931] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 400}}, {'contains': '$ddt{contains}'}]
+[2022-03-09 19:23:35,931] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:23:35,931] logger_util.py->error_log line:67 [ERROR] 断言失败：状态码不等于200
+[2022-03-09 19:23:35,931] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:23:35,931] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:23:35,932] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 203, in equals_assert
+    error_log("断言失败：状态码不等于%s" % return_code)
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：状态码不等于200
+
+[2022-03-09 19:23:35,932] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 203, in equals_assert
+    error_log("断言失败：状态码不等于%s" % return_code)
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：状态码不等于200
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 181, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 203, in equals_assert
+    error_log("断言失败：状态码不等于%s" % return_code)
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：状态码不等于200
+
+
+[2022-03-09 19:23:47,127] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:47,127] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:47,128] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:23:47,128] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:23:47,128] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:23:47,128] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:23:47,128] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825027128', 'sign': '4036cb6808da0093aaaa3ce692d2886e'}
+[2022-03-09 19:23:47,141] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': '$ddt{contains}'}]
+[2022-03-09 19:23:47,141] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '113d4457019f4f3497574c787c02cbbb'}, 'success': True}
+[2022-03-09 19:23:47,141] logger_util.py->error_log line:67 [ERROR] 断言失败：返回的结果中不包含$ddt{contains}
+[2022-03-09 19:23:47,141] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:23:47,141] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:23:47,141] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含$ddt{contains}
+
+[2022-03-09 19:23:47,142] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含$ddt{contains}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含$ddt{contains}
+
+
+[2022-03-09 19:23:47,227] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:47,227] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:23:47,227] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:23:47,227] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:23:47,228] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:23:47,228] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:23:47,228] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825027227', 'sign': '5624e408fdbd93f51aaac095c74cfd0b'}
+[2022-03-09 19:23:47,237] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': '$ddt{contains}'}]
+[2022-03-09 19:23:47,237] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:23:47,237] logger_util.py->error_log line:67 [ERROR] 断言失败：返回的结果中不包含$ddt{contains}
+[2022-03-09 19:23:47,237] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:23:47,237] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:23:47,237] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含$ddt{contains}
+
+[2022-03-09 19:23:47,238] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含$ddt{contains}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含$ddt{contains}
+
+
+[2022-03-09 19:24:34,674] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:24:34,674] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:24:34,674] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:24:34,674] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:24:34,674] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:24:34,674] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:24:34,675] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825074674', 'sign': '8a5a86058e27387560163ae94c744b95'}
+[2022-03-09 19:24:34,689] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 19:24:34,689] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '24d9a8fc9aff4d56a0b8f7b655edb533'}, 'success': True}
+[2022-03-09 19:24:34,689] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:24:34,689] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:24:34,692] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825074692', 'sign': 'e6e697f02a617e8d0c44ae1b6153c28f'}
+[2022-03-09 19:24:34,698] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 400}]
+[2022-03-09 19:24:34,698] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:24:34,699] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:24:34,699] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:25:13,854] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825113854', 'sign': '8edf1c0655b93d71afbccb9827470e26'}
+[2022-03-09 19:25:13,869] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 19:25:13,869] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': '871940e30a014ce79dced7d2c1b4edb0'}, 'success': True}
+[2022-03-09 19:25:13,869] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:25:13,869] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:25:13,872] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:13,872] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:13,872] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:25:13,872] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:25:13,873] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:25:13,873] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:25:13,873] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825113872', 'sign': '97ec8b6f44456669a8159021f5a40f69'}
+[2022-03-09 19:25:13,879] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 19:25:13,879] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:25:13,879] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:25:13,880] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:25:53,437] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:53,437] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:53,437] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:25:53,438] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:25:53,438] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:25:53,438] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:25:53,438] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825153437', 'sign': 'e4a4a501b47e870fbfb59b0cc877a625'}
+[2022-03-09 19:25:53,452] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 19:25:53,452] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'a6d9f69e5d24442db8a4f27238f097f0'}, 'success': True}
+[2022-03-09 19:25:53,453] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:25:53,453] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:25:53,455] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:53,455] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:53,456] logger_util.py->logs line:71 [INFO] 接口名称: clientId错误
+[2022-03-09 19:25:53,456] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:25:53,456] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:25:53,456] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:25:53,456] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825153456', 'sign': '660383ba44187f3d6c6ab8334e337f8a'}
+[2022-03-09 19:25:53,462] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 19:25:53,462] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:25:53,462] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:25:53,462] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:25:53,465] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:53,465] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:25:53,465] logger_util.py->logs line:71 [INFO] 接口名称: ClientSecret错误
+[2022-03-09 19:25:53,465] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:25:53,466] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:25:53,466] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:25:53,466] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '1646825153465', 'sign': 'bec5f6cc9f767bacee20d18e169b19ef'}
+[2022-03-09 19:25:53,472] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 19:25:53,473] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': '签名校验错误', 'success': False}
+[2022-03-09 19:25:53,473] logger_util.py->error_log line:67 [ERROR] 断言失败：返回的结果中不包含clientId错误
+[2022-03-09 19:25:53,473] logger_util.py->logs line:71 [INFO] 请求接口失败
+[2022-03-09 19:25:53,473] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:25:53,473] logger_util.py->error_log line:67 [ERROR] 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含clientId错误
+
+[2022-03-09 19:25:53,473] logger_util.py->error_log line:67 [ERROR] 规范yaml测试用例standard_yaml异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含clientId错误
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 273, in md5_yaml
+    self.assert_result(caseinfo['validate'], results_json, return_code)
+  File "D:\Desktop\1\API\common\requests_util.py", line 194, in assert_result
+    error_log("判断断言assert_result异常: %s" % str(traceback.format_exc()))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 判断断言assert_result异常: Traceback (most recent call last):
+  File "D:\Desktop\1\API\common\requests_util.py", line 184, in assert_result
+    flag = self.contains_assert(value, sj_result)
+  File "D:\Desktop\1\API\common\requests_util.py", line 220, in contains_assert
+    error_log("断言失败：返回的结果中不包含" + str(value))
+  File "D:\Desktop\1\API\common\logger_util.py", line 68, in error_log
+    raise Exception(message)
+Exception: 断言失败：返回的结果中不包含clientId错误
+
+
+[2022-03-09 19:26:13,118] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:26:13,118] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:26:13,119] logger_util.py->logs line:71 [INFO] 接口名称: 成功登录api获取token
+[2022-03-09 19:26:13,119] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:26:13,119] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:26:13,119] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:26:13,119] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825173119', 'sign': 'ec3fe73a283e1a9081e727814a55d5fc'}
+[2022-03-09 19:26:13,132] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 200}]
+[2022-03-09 19:26:13,132] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 200, 'message': '成功', 'data': {'accessToken': 'e34cdad6777d485dac840b2155df8d1d'}, 'success': True}
+[2022-03-09 19:26:13,132] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:26:13,132] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] 接口名称: clientId为空
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:26:13,135] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '', 'ClientSecret': 'ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT', 'timestamp': '1646825173135', 'sign': '9b64b74dbe9e88b41f00e73270b62a31'}
+[2022-03-09 19:26:13,140] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': 'clientId错误'}]
+[2022-03-09 19:26:13,140] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': 'clientId错误', 'success': False}
+[2022-03-09 19:26:13,141] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:26:13,141] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+
+[2022-03-09 19:26:13,143] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:26:13,143] logger_util.py->logs line:71 [INFO] ------------测试开始------------
+[2022-03-09 19:26:13,143] logger_util.py->logs line:71 [INFO] 接口名称: ClientSecret为空
+[2022-03-09 19:26:13,144] logger_util.py->logs line:71 [INFO] 请求方式: post
+[2022-03-09 19:26:13,144] logger_util.py->logs line:71 [INFO] 请求路径: http://192.168.2.129:8088/common/getToken
+[2022-03-09 19:26:13,144] logger_util.py->logs line:71 [INFO] 请求头为空
+[2022-03-09 19:26:13,144] logger_util.py->logs line:71 [INFO] 请求data参数: {'clientId': '5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E', 'ClientSecret': '', 'timestamp': '1646825173143', 'sign': 'b64f6b6531ef0f6f9dadfdcb6b3a039c'}
+[2022-03-09 19:26:13,151] logger_util.py->logs line:71 [INFO] 预取结果: [{'equals': {'code': 200}}, {'contains': '签名校验错误'}]
+[2022-03-09 19:26:13,151] logger_util.py->logs line:71 [INFO] 实际结果: {'code': 400, 'message': '签名校验错误', 'success': False}
+[2022-03-09 19:26:13,151] logger_util.py->logs line:71 [INFO] 请求接口成功
+[2022-03-09 19:26:13,151] logger_util.py->logs line:71 [INFO] ------------测试结束------------
+

@@ -1,0 +1,5 @@
+# DDT(data driver test)数据驱动YAML文件，对应的yaml测试用例文件为：save_department.yaml
+- ['name','clientId','ClientSecret','contains']
+- ['成功登录api获取token','5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E','ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT',200]
+- ['clientId为空','','ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT','clientId错误']
+- ['ClientSecret为空','5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E','','签名校验错误']
