@@ -20,7 +20,6 @@ def test_email():
     message['To'] = Header("管理员", 'utf-8')  # 收件人
     subject = 'Python SMTP 邮件测试'
     message['Subject'] = Header(subject, 'utf-8')  # 邮件标题
-
     try:
         stmp.sendmail(from_addr, to_addrs, message.as_string())
     except Exception as e:
