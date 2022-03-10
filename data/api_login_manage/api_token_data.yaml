@@ -2,4 +2,6 @@
 - ['name','clientId','ClientSecret','contains']
 - ['成功登录api获取token','5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E','ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT',200]
 - ['clientId为空','','ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT','clientId错误']
+- ['clientId错误','5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E111','ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT','clientId错误']
+- ['ClientSecret错误','5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E111','ODZyiyNt0uHY4H9GgrGVT2ocKe84RpaUMTOfYl3ZqF3EYWsn9HKFML6i6GPT111','clientId错误']
 - ['ClientSecret为空','5WV4dG5MKGw2oIDZvvtnaQsnBIwU025E','','签名校验错误']

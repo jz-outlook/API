@@ -1,14 +1,17 @@
 -
-  name: 修改部门名称
+  name: $ddt{name}
+  parameterize:
+    name-id-parentId-contains: /data/department_manage/edit_department_data.yaml
   request:
     method: post
     url: /user/department/save
     data:
-      id: ${read_extract_data(parentId)}
+      id: $ddt{id}
       name: 修改部门名称
-      parentId: ${read_extract_data(firm_id)}
+      parentId: $ddt{parentId}
     headers:
       accessToken: ${read_extract_data(accessToken)}
   validate:
     - equals: {code: 200}
-    - equals: {message: '成功'}
+#    - equals: {code: '成功'}
+    - contains: $ddt{contains}

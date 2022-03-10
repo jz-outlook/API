@@ -10,5 +10,5 @@ class TestApiLogin:
 
     @allure.story("获取统一鉴权码接口")
     @pytest.mark.parametrize('caseinfo', read_case_yaml('./testCases/api_login/test_api_login.yaml'))
-    def test_get_department_list(self, caseinfo):
+    def test_api_login(self, caseinfo):
         RequestsUtil('base_api_url', DebugTalk()).md5_yaml(caseinfo)
