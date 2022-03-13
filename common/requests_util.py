@@ -226,7 +226,6 @@ class RequestsUtil:
             caseinfo_keys = caseinfo.keys()
             # 判断一级关键字是否包含有：name,request,validate
             ###########
-            logs('------------测试开始------------')
             caseinfo_keys = caseinfo.keys()
             # 判断request下面是否包含：method,url
             requests_keys = caseinfo['request']

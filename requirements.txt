@@ -3,3 +3,4 @@ pyYAML
 jsonpath
 requests
 allure-pytest
+rsa
