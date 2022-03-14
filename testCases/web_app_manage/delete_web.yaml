@@ -1,5 +1,5 @@
 -
-  name: 修改WEB应用
+  name: 删除WEB应用
   request:
     method: delete
     url: /web-app/delete/${read_extract_data(app_id)}
